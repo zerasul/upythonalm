@@ -66,6 +66,8 @@
         
             <li><a class="toctree-l3" href="#thonny">Thonny</a></li>
         
+            <li><a class="toctree-l3" href="#alternativa-a-thonny">Alternativa a Thonny</a></li>
+        
         </ul>
     
 
@@ -74,7 +76,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../esp.md">ESP8266 o esp32</a>
+    <a class="" href="../esp/">ESP8266 o esp32</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -141,13 +143,33 @@
 <li>Ejecutar el comando python get-pip.py y seguir las instrucciones</li>
 </ol>
 <h2 id="thonny">Thonny</h2>
-<p>Para este curso utilizaremos el Editor de <em>thonny</em> el cual nos permitirá subir y ejecutar programas en nuestra placa programable</p>
+<p>Para este curso utilizaremos el Editor de <em>thonny</em> el cual nos permitirá subir y ejecutar programas en nuestra placa programable.</p>
+<p>Thonny es un editor ligero que esta construido con python y se puede utilizar de forma muy sencilla para crear nuestros programas tanto en local, como con MicroPython.</p>
+<p><img alt="thonny" src="../img/thonny.PNG" /></p>
+<p>Para instalar thonny, se puede instalar de dos formas; de forma independiente el cual trae su propio interprete y entorno python integrado, o por el contrario, instalarlo como una librería usando <em>pip</em>.</p>
+<p><strong>Instalación Propia</strong></p>
+<p>para instalar thonny, se debe descargar desde el siguiente <a href="https://thonny.org/">enlace</a>.</p>
+<p><strong>Instalación usando Pip</strong></p>
+<p>Para instalar thonny usando Pip, usaremos el siguiente enlace:</p>
+<pre><code class="bash">pip install thonny-esp
+</code></pre>
+
+<p><strong>NOTA 1:</strong> Es importante que se añada el -esp; esto instalará también las herramientas para trabajar con los ESPx.</p>
+<p>Después lo ejecutaremos con el siguiente comando:</p>
+<pre><code class="bash">python -m thonny
+</code></pre>
+
+<p><strong>NOTA 2</strong>: Es posible que se pueda ejecutar solo escribiendo <code>thonny</code> si esta bien añadido al PATH.</p>
+<h2 id="alternativa-a-thonny">Alternativa a Thonny</h2>
+<p>Como alternativa a Thonny, podemos instalar el editor UPyCraft. El cual puede obtenerse del siguiente <a href="https://github.com/DFRobot/uPyCraft">enlace</a>.</p>
               
             </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../esp/" class="btn btn-neutral float-right" title="ESP8266 o esp32">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -178,6 +200,8 @@
       
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../esp/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
