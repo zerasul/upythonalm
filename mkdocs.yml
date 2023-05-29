@@ -1,0 +1,11 @@
+site_name: Curso de MicroPython
+theme:
+  name: readthedocs
+nav:
+  - Home: index.md
+  - instalar Entorno: install_env.md
+  - Dispositivos: devices.md
+  - Instalar MicroPython: install.md
+  - Primeros Pasos: getting_started.md
+  - Proyecto Final: final.md
+  - Recursos: references.md
