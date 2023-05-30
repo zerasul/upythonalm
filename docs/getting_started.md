@@ -47,6 +47,7 @@ while True:
   pin.value(0)
   sleep(1)
 ```
+**NOTA**: Dependiendo de la placa el número de Pin puede cambiar. Para la Raspberry Pi Pico es el GPIO25 mientas para la Raspberry Pi Pico W es el GPIO0. Consulta la documentación del fabricante.
 
 Una vez escrito, lo guardaremos. Cuando le demos a guardar, nos preguntará donde lo queremos almacenar; si en nuestro equipo, o en nuestra placa.
 
