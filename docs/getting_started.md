@@ -24,7 +24,7 @@ Primero, vamos a realizar nuestro primer montaje; por lo que necesitaremos los s
 * 1 BreadBoard
 * 1 Led
 * 1 Resistencia 220Ohmios
-* cables dupon
+* cables Dupont
 
 Realizaremos el siguiente Montaje
 
@@ -98,7 +98,7 @@ Para este montaje, usaremos los siguientes materiales:
 * 1 resistencia 220Ohmios o similar.
 * 1 resistenia 1KOhmios o similar.
 * 1 Boton
-* cables Dupon
+* cables Dupont
 
 Veamos el montaje:
 

@@ -11,7 +11,7 @@ Para este ejercicio, se necesitará los siguientes materiales:
 * 1 Sensor Temperatura HC-11
 * 1 led
 * 1 resistencia 220Ohmios
-* cables dupon
+* cables Dupont
 
 Seguidamente dejamos el montaje:
 
@@ -46,6 +46,7 @@ Para este ejercicio, necesitaréis los siguientes materiales:
 * 1 Sensor Ultrasonidos HCSR-04
 * 1 led
 * 1 resistencia 220 Ohmios
+* Cables Dupont
 
 Tras esto, realizamos el siguiente montaje.
 
