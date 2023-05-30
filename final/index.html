@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Proyecto Final - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Proyecto Final";
+        var mkdocs_page_input_path = "final.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Proyecto Final</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Proyecto Final</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="proyecto-final">Proyecto Final</h1>
+<p>Para afianzar conocimientos o poder llegar un poco más allá. Os dejamos dos ejercicios que podéis hacer.</p>
+<p><strong> Sensor Temperatura</strong></p>
+<p>Para este ejercicio, se necesitará los siguientes materiales:</p>
+<ul>
+<li>1 Placa ESP32 o Raspberry Pi Pico</li>
+<li>1 BreadBoard</li>
+<li>1 Sensor Temperatura HC-11</li>
+<li>1 led</li>
+<li>1 resistencia 220Ohmios</li>
+<li>cables Dupont</li>
+</ul>
+<p>Seguidamente dejamos el montaje:</p>
+<p><img alt="Montaje HC-11" src="../resources/img/montaje3.png" /></p>
+<p>Por aquí el código del lector; en este caso, encederá el led si se llega a un umbral de temperatura y humedad:</p>
+<pre><code class="language-python">import dht
+from machine import Pin
+
+pindht = Pin(0)
+ledpin = Pin(2, Pin.OUT)
+dht11 = dht.DHT11(pindht)
+
+while True:
+  dht1.measure()
+  temp = dht11.temperature()
+  hum = dht11. humidity()
+  if temp &gt; 24 or hum &gt; 55:
+    ledpin.value(1)
+  else:
+    ledpin.value(0)
+</code></pre>
+<p><strong>Sensor Ultrasonidos</strong></p>
+<p>Para este ejercicio, necesitaréis los siguientes materiales:</p>
+<ul>
+<li>1 Placa ESP32 o Raspberry Pi Pico</li>
+<li>1 breadBoard</li>
+<li>1 Sensor Ultrasonidos HCSR-04</li>
+<li>1 led</li>
+<li>1 resistencia 220 Ohmios</li>
+<li>Cables Dupont</li>
+</ul>
+<p>Tras esto, realizamos el siguiente montaje.</p>
+<p><img alt="Ultrasonic" src="https://github.com/pythoncanarias/upython/blob/master/imagenes/hcsr04.png?raw=true" /></p>
+<p>Una vez conectado, necesitaremos una librería, para gestionar el sensor de ultrasonidos. Descargar el fichero python de la siguiente dirección:</p>
+<p><a href="https://github.com/rsc1975/micropython-hcsr04">https://github.com/rsc1975/micropython-hcsr04</a></p>
+<p>Por último, crear el siguiente código fuente:</p>
+<pre><code class="language-python">from hcsr04 import HCSR04
+from machine import Pin
+
+sensor = HCSR04(trigger_pin=16, echo_pin=0)
+led = Pin(2, Pin.OUT)
+
+while(True):
+    distance= sensor.distance_cm()
+    if distance &lt; 5:
+        led.value(1)
+    else:
+        led.value(0)
+</code></pre>
+<p>Una vez escrito el código ya podemos probarlo; viendo si funciona correctamente al poner un obstaculo cerca del sensor.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting_started/" class="btn btn-neutral float-left" title="Primeros Pasos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../references/" class="btn btn-neutral float-right" title="Recursos">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting_started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../references/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
