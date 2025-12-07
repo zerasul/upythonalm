@@ -5,7 +5,14 @@ nav:
   - Home: index.md
   - instalar Entorno: install_env.md
   - Dispositivos: devices.md
+  - Simulador MicroPython: simulator.md
   - Instalar MicroPython: install.md
   - Primeros Pasos: getting_started.md
+  - Entrada/Salida Digital: digital_io.md
+  - Entrada/Salida Analogica: analog_io.md
+  - Sensores/Actuadores: sensors.md
+  - Redes: networks.md
+  - Comunicación Http: http.md
+  - MQTT: mqtt.md
   - Proyecto Final: final.md
   - Recursos: references.md

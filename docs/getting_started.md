@@ -12,7 +12,48 @@ Si estamos utilizando Thonny, podemos verlo en la parte inferior de la pantalla.
 
 ![thonnymp](resources/img/thonnymp.png)
 
-Esto nos permitirá interactuar directamente con nuestra placa.
+## Eletrónica Básica
+
+Vamos a ver algunos conceptos básicos de electrónica que nos permitirán entender mejor como funcionan las placas y los microcontroladores.
+
+### GPIO
+
+Los GPIO (General Purpose Input Output) son los pines de entrada y salida que tienen las placas para poder interactuar con el exterior. Estos pines pueden ser configurados como entradas o salidas digitales.
+
+### Entradas Digitales
+
+Las entradas digitales son aquellas que permiten leer el estado de un pin, es decir, si está en alto (1) o en bajo (0). Esto nos permite leer el estado de sensores, botones, etc.
+
+### Salidas Digitales
+
+Las salidas digitales son aquellas que permiten enviar una señal a un pin, es decir, ponerlo en alto (1) o en bajo (0).
+
+### Configuración de Pines en MicroPython
+
+En MicroPython, para configurar los pines GPIO, utilizamos la clase `Pin` del módulo `machine`. Esta clase nos permite configurar un pin como entrada o salida.
+
+### BreadBoard
+
+Una BreadBoard es una placa de pruebas que nos permite realizar montajes electrónicos sin necesidad de soldar. Esto nos permite realizar prototipos de manera rápida y sencilla.
+
+En la siguiente imagen podemos ver una BreadBoard típica:
+
+![BreadBoard](resources/img/breadboard.png)
+
+Esto nos permitirá interactuar directamente con nuestra placa. Ya que permite conectar dispositivos electrónicos como leds, resistencias, botones, sensores, etc.
+
+Las breadboards tienen filas y columnas de conexiones que nos permiten conectar los componentes entre sí y con la placa. Una breadboard típica tiene dos áreas principales: la zona de alimentación (power rails) y la zona de conexiones (terminal strips).
+
+En la zona de alimentación, encontramos dos filas largas en cada lado de la breadboard que se utilizan para distribuir la alimentación (Vcc) y la tierra (GND) a los componentes conectados en la breadboard.
+
+En la zona de conexiones, encontramos filas y columnas de agujeros donde podemos insertar los componentes electrónicos. Cada fila está conectada internamente, lo que significa que todos los agujeros en una fila están conectados entre sí.
+
+### LED y Resistencia
+
+Un LED (Light Emitting Diode) es un diodo que emite luz cuando pasa una corriente eléctrica a través de él. Los LEDs tienen dos patas: la pata larga es el ánodo (positivo) y la pata corta es el cátodo (negativo).
+
+Para proteger el LED y evitar que se queme, es necesario utilizar una resistencia en serie con el LED. La resistencia limita la corriente que pasa a través del LED.
+
 
 ## Primer Programa con MicroPython
 

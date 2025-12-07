@@ -7,8 +7,19 @@ En esta pagina encontraras los contenidos para poder instalar y utilizar MicroPy
 1. [Instalar Entorno](install_env.md)
 2. [Dispositivos](devices.md)
 3. [Instalacion MicroPython](install.md)
-4. [Primeros Pasos](getting_started.md)
-5. [Ejercicios Finales](final.md)
-6. [Recursos](references.md)
+4. [Simulador MicroPython](simulator.md)
+5. [Primeros Pasos](getting_started.md)
+6. [Entrada/Salida Digital](digital_io.md)
+7. [Entrada/Salida Analogica](analog_io.md)
+8. [Sensores/Actuadores](sensors.md)
+9. [Redes](networks.md)
+10. [Comunicación Http)](http.md)
+11. [MQTT](mqtt.md)
+9. [Ejercicios Finales](final.md)
+10. [Recursos](references.md)
 
-Un saludo especial a mis alumnos del MEDAC que andan el último día de clase dandolo todo.
+## Versiones
+
+- versión 1.2 - Diciembre 2025 (Se añaden nuevos apartados y ejemplos)
+- versión 1.1 - Mayo 2023 (actualización de contenidos y corrección de errores)
+- versión 1.0 - Octubre 2023 (versión inicial)
