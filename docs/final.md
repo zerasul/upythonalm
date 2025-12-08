@@ -1,76 +1,33 @@
 # Proyecto Final
 
-Para afianzar conocimientos o poder llegar un poco más allá. Os dejamos dos ejercicios que podéis hacer.
+Este documento describe el proyecto final que se llevará a cabo al concluir el curso. El objetivo del proyecto es aplicar los conocimientos adquiridos durante las lecciones para resolver un problema real o desarrollar una aplicación funcional.
 
-** Sensor Temperatura**
 
-Para este ejercicio, se necesitará los siguientes materiales:
+Vamos a basarnos en la lectura del sensor de sonido KY-037 y publicar los datos obtenidos en un broker MQTT o utilizando una API REST Http utilizando MicroPython.
 
-* 1 Placa ESP32 o Raspberry Pi Pico
-* 1 BreadBoard
-* 1 Sensor Temperatura HC-11
-* 1 led
-* 1 resistencia 220Ohmios
-* cables Dupont
+![Montaje KY-037](resources/img/montajeky037.png)
 
-Seguidamente dejamos el montaje:
+Además, también conectaremos la patilla para medir el umbral digital y que se envíe un evento cuando se supere dicho umbral.
 
-![Montaje HC-11](resources/img/montaje3.png)
+Estos datos serán almacenados en una base de datos en la nube para su posterior análisis y visualización.
 
-Por aquí el código del lector; en este caso, encederá el led si se llega a un umbral de temperatura y humedad:
+Recuerda que se van a realizar varios dispositivos que tendrán identificados el aula donde estarán instalados.
 
-```python
-import dht
-from machine import Pin
+El proyecto incluirá las siguientes etapas:
 
-pindht = Pin(0)
-ledpin = Pin(2, Pin.OUT)
-dht11 = dht.DHT11(pindht)
+1.- **Análisis de Requisitos**: Definir los objetivos del proyecto, las funcionalidades necesarias y los requisitos técnicos.
 
-while True:
-  dht1.measure()
-  temp = dht11.temperature()
-  hum = dht11. humidity()
-  if temp > 24 or hum > 55:
-    ledpin.value(1)
-  else:
-    ledpin.value(0)
-```
+2.- **Diseño del Sistema**: Planificar la arquitectura del sistema, seleccionar los componentes de hardware y diseñar la estructura del software; e incluso simularlo usando el simulador Wokwi.
 
-**Sensor Ultrasonidos**
+3.- **Implementación**: Desarrollar el código en MicroPython para la lectura del sensor KY-037, la conexión al broker MQTT o API REST, y el envío de datos.
 
-Para este ejercicio, necesitaréis los siguientes materiales:
+4.- **Implementar Broker y almacenamiento en la nube**: Configurar un broker MQTT (como Mosquitto o HiveMQ) o una API REST para recibir los datos, y establecer una base de datos en la nube (como Firebase, AWS DynamoDB, etc.) para almacenar la 
+información.
 
-* 1 Placa ESP32 o Raspberry Pi Pico
-* 1 breadBoard
-* 1 Sensor Ultrasonidos HCSR-04
-* 1 led
-* 1 resistencia 220 Ohmios
-* Cables Dupont
+5.- **Pruebas y Validación**: Realizar pruebas exhaustivas para asegurar que el sistema funciona correctamente, incluyendo la lectura del sensor, la transmisión de datos y el almacenamiento en la nube.
 
-Tras esto, realizamos el siguiente montaje.
+6.- **Documentación**: Crear documentación detallada del proyecto, incluyendo el diseño del sistema, el código fuente, las instrucciones de configuración y uso, y cualquier otro aspecto relevante.
 
-![Ultrasonic](https://github.com/pythoncanarias/upython/blob/master/imagenes/hcsr04.png?raw=true)
+7.- **Creación de un Dashboard de Visualización**: Desarrollar un dashboard utilizando herramientas como Grafana, Power BI o una aplicación web personalizada para visualizar los datos almacenados en la base de datos en la nube.
 
-Una vez conectado, necesitaremos una librería, para gestionar el sensor de ultrasonidos. Descargar el fichero python de la siguiente dirección:
-
-[https://github.com/rsc1975/micropython-hcsr04](https://github.com/rsc1975/micropython-hcsr04)
-
-Por último, crear el siguiente código fuente:
-
-```python
-from hcsr04 import HCSR04
-from machine import Pin
-
-sensor = HCSR04(trigger_pin=16, echo_pin=0)
-led = Pin(2, Pin.OUT)
-
-while(True):
-    distance= sensor.distance_cm()
-    if distance < 5:
-        led.value(1)
-    else:
-        led.value(0)
-```
-
-Una vez escrito el código ya podemos probarlo; viendo si funciona correctamente al poner un obstaculo cerca del sensor.
+8.- **Presentación del Proyecto**: Preparar una presentación para mostrar el proyecto, destacando los objetivos, el proceso de desarrollo, los desafíos enfrentados y los resultados obtenidos.

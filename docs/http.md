@@ -64,7 +64,7 @@ A continuación, se muestra un ejemplo de cómo configurar un servidor HTTP simp
 ```python
 import socket
 from machine import Pin
-led = Pin(2, Pin.OUT)  # Cambia el número del pin según tu conexión
+led = Pin(14, Pin.OUT)  # Cambia el número del pin según tu conexión
 addr = socket.getaddrinfo('0.0.0.0', 80)[0][-1]
 s = socket.socket()
 s.bind(addr)
