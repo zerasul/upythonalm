@@ -67,6 +67,35 @@ while True:
 ```
 En este ejemplo, el valor leído del potenciómetro se imprimirá en la consola cada segundo. A medida que gires el potenciómetro, el valor cambiará, reflejando el nivel de voltaje en el pin analógico.
 
+### Ejemplo 2: Fotocelda (LDR)
+
+Una fotocelda o LDR (Light Dependent Resistor) es un tipo de resistor cuya resistencia varía en función de la cantidad de luz que incide sobre él. A medida que la luz aumenta, la resistencia disminuye, y viceversa.
+
+Para este ejemplo, necesitarás los siguientes componentes:
+- 1 Fotocelda (LDR)
+- 1 Resistencia de 10K ohmios
+- Cables de conexión
+- Protoboard
+
+El montaje que realizaremos será el siguiente:
+
+![Montaje LDR](resources/img/montajeldr.png)
+
+El siguiente código lee el valor de la fotocelda y lo imprime en la consola:
+
+```python
+from machine import ADC
+import time
+pin_number = 33  # Cambia esto al número de pin que estás utilizando
+adc = ADC(pin_number)
+while True:
+    value = adc.read()
+    print("Valor de la fotocelda (LDR):", value)
+    time.sleep(1)
+```
+
+En este ejemplo, el valor leído de la fotocelda se imprimirá en la consola cada segundo. A medida que la cantidad de luz que incide sobre la LDR cambie, el valor también cambiará, reflejando la variación en la resistencia del sensor.
+
 ## Escritura de Salidas Analógicas
 
 
@@ -120,32 +149,3 @@ while True:
 ``` 
 
 Con este programa, el valor analógico se incrementa y decrementa gradualmente, lo que puede hacer que un LED conectado al pin DAC varíe su brillo de manera suave.
-
-### Ejemplo 2: Fotocelda (LDR)
-
-Una fotocelda o LDR (Light Dependent Resistor) es un tipo de resistor cuya resistencia varía en función de la cantidad de luz que incide sobre él. A medida que la luz aumenta, la resistencia disminuye, y viceversa.
-
-Para este ejemplo, necesitarás los siguientes componentes:
-- 1 Fotocelda (LDR)
-- 1 Resistencia de 10K ohmios
-- Cables de conexión
-- Protoboard
-
-El montaje que realizaremos será el siguiente:
-
-![Montaje LDR](resources/img/montajeldr.png)
-
-El siguiente código lee el valor de la fotocelda y lo imprime en la consola:
-
-```python
-from machine import ADC
-import time
-pin_number = 33  # Cambia esto al número de pin que estás utilizando
-adc = ADC(pin_number)
-while True:
-    value = adc.read()
-    print("Valor de la fotocelda (LDR):", value)
-    time.sleep(1)
-```
-
-En este ejemplo, el valor leído de la fotocelda se imprimirá en la consola cada segundo. A medida que la cantidad de luz que incide sobre la LDR cambie, el valor también cambiará, reflejando la variación en la resistencia del sensor.
