@@ -10,6 +10,7 @@ nav:
   - Primeros Pasos: getting_started.md
   - Entrada/Salida Digital: digital_io.md
   - Entrada/Salida Analogica: analog_io.md
+  - Interrupciones: interrupts.md
   - Sensores/Actuadores: sensors.md
   - Redes: networks.md
   - Comunicación Http: http.md

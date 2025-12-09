@@ -11,12 +11,13 @@ En esta pagina encontraras los contenidos para poder instalar y utilizar MicroPy
 5. [Primeros Pasos](getting_started.md)
 6. [Entrada/Salida Digital](digital_io.md)
 7. [Entrada/Salida Analogica](analog_io.md)
-8. [Sensores/Actuadores](sensors.md)
-9. [Redes](networks.md)
-10. [Comunicación Http)](http.md)
-11. [MQTT](mqtt.md)
-9. [Ejercicios Finales](final.md)
-10. [Recursos](references.md)
+8. [Interrupciones](interrupts.md)
+9. [Sensores/Actuadores](sensors.md)
+10. [Redes](networks.md)
+11. [Comunicación Http)](http.md)
+12. [MQTT](mqtt.md)
+13. [Ejercicios Finales](final.md)
+14. [Recursos](references.md)
 
 ## Versiones
 
