@@ -5,7 +5,7 @@ Este documento describe el proyecto final que se llevará a cabo al concluir el 
 
 Vamos a basarnos en la lectura del sensor de sonido KY-037 y publicar los datos obtenidos en un broker MQTT o utilizando una API REST Http utilizando MicroPython.
 
-![Montaje KY-037](resources/img/montajeky037.png)
+![Montaje KY-037](resources/img/montajefinal.png)
 
 Además, también conectaremos la patilla para medir el umbral digital y que se envíe un evento cuando se supere dicho umbral.
 
