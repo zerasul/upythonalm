@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Primeros Pasos - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Primeros Pasos";
+        var mkdocs_page_input_path = "getting_started.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Primeros Pasos</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#usar-el-interprete">Usar el Interprete</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#eletronica-basica">Eletrónica Básica</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gpio">GPIO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#entradas-digitales">Entradas Digitales</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#salidas-digitales">Salidas Digitales</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuracion-de-pines-en-micropython">Configuración de Pines en MicroPython</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#breadboard">BreadBoard</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#led-y-resistencia">LED y Resistencia</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#primer-programa-con-micropython">Primer Programa con MicroPython</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejercicio-con-2-leds">Ejercicio con 2 Leds</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#botones-con-micropython">Botones Con MicroPython</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Primeros Pasos</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="primeros-pasos">Primeros Pasos</h1>
+<p>Una vez tenemos todo instalado, ya podemos empezar a utilizar nuestra placa. </p>
+<h2 id="usar-el-interprete">Usar el Interprete</h2>
+<p>En nuestra placa esta instalado el interprete REPL como si de cualquier distribución python se tratara. Por lo que podemos trabajar con este interprete y dar algunas ordenes.</p>
+<p>Si estamos utilizando Thonny, podemos verlo en la parte inferior de la pantalla.</p>
+<p><strong>NOTA</strong>: Recuerda configurar correctamente el puerto de la placa a utilizar.</p>
+<p><img alt="thonnymp" src="../resources/img/thonnymp.png" /></p>
+<h2 id="eletronica-basica">Eletrónica Básica</h2>
+<p>Vamos a ver algunos conceptos básicos de electrónica que nos permitirán entender mejor como funcionan las placas y los microcontroladores.</p>
+<h3 id="gpio">GPIO</h3>
+<p>Los GPIO (General Purpose Input Output) son los pines de entrada y salida que tienen las placas para poder interactuar con el exterior. Estos pines pueden ser configurados como entradas o salidas digitales.</p>
+<h3 id="entradas-digitales">Entradas Digitales</h3>
+<p>Las entradas digitales son aquellas que permiten leer el estado de un pin, es decir, si está en alto (1) o en bajo (0). Esto nos permite leer el estado de sensores, botones, etc.</p>
+<h3 id="salidas-digitales">Salidas Digitales</h3>
+<p>Las salidas digitales son aquellas que permiten enviar una señal a un pin, es decir, ponerlo en alto (1) o en bajo (0).</p>
+<h3 id="configuracion-de-pines-en-micropython">Configuración de Pines en MicroPython</h3>
+<p>En MicroPython, para configurar los pines GPIO, utilizamos la clase <code>Pin</code> del módulo <code>machine</code>. Esta clase nos permite configurar un pin como entrada o salida.</p>
+<h3 id="breadboard">BreadBoard</h3>
+<p>Una BreadBoard es una placa de pruebas que nos permite realizar montajes electrónicos sin necesidad de soldar. Esto nos permite realizar prototipos de manera rápida y sencilla.</p>
+<p>En la siguiente imagen podemos ver una BreadBoard típica:</p>
+<p><img alt="BreadBoard" src="../resources/img/breadboard.png" /></p>
+<p>Esto nos permitirá interactuar directamente con nuestra placa. Ya que permite conectar dispositivos electrónicos como leds, resistencias, botones, sensores, etc.</p>
+<p>Las breadboards tienen filas y columnas de conexiones que nos permiten conectar los componentes entre sí y con la placa. Una breadboard típica tiene dos áreas principales: la zona de alimentación (power rails) y la zona de conexiones (terminal strips).</p>
+<p>En la zona de alimentación, encontramos dos filas largas en cada lado de la breadboard que se utilizan para distribuir la alimentación (Vcc) y la tierra (GND) a los componentes conectados en la breadboard.</p>
+<p>En la zona de conexiones, encontramos filas y columnas de agujeros donde podemos insertar los componentes electrónicos. Cada fila está conectada internamente, lo que significa que todos los agujeros en una fila están conectados entre sí.</p>
+<h3 id="led-y-resistencia">LED y Resistencia</h3>
+<p>Un LED (Light Emitting Diode) es un diodo que emite luz cuando pasa una corriente eléctrica a través de él. Los LEDs tienen dos patas: la pata larga es el ánodo (positivo) y la pata corta es el cátodo (negativo).</p>
+<p>Para proteger el LED y evitar que se queme, es necesario utilizar una resistencia en serie con el LED. La resistencia limita la corriente que pasa a través del LED.</p>
+<h2 id="primer-programa-con-micropython">Primer Programa con MicroPython</h2>
+<p>Vamos a ponernos ya manos a la obra; crearemos nuestro primer programa con MicroPython. Comenzando por lo más sencillo. Encender y apagar un Led.</p>
+<p>Primero, vamos a realizar nuestro primer montaje; por lo que necesitaremos los siguientes materiales:</p>
+<ul>
+<li>1 placa ESP32 o Raspberry Pi PICO</li>
+<li>1 BreadBoard</li>
+<li>1 Led</li>
+<li>1 Resistencia 220Ohmios</li>
+<li>cables Dupont</li>
+</ul>
+<p>Realizaremos el siguiente Montaje</p>
+<p><img alt="Blink" src="../resources/img/blink.jpeg" /></p>
+<p><strong>NOTA</strong>: En el caso de Raspberry Pi usar el mismo GPIO</p>
+<p>Una vez hecho esto, crearemos en thonny el siguiente código Python.</p>
+<pre><code class="language-python">from machine import Pin
+from time import sleep
+#El Pin del led es el 2 que corresponde al GPIO2
+
+ledpin=2
+pin = Pin(ledpin, Pin.OUT)
+while True:
+  pin.value(1)
+  sleep(1)
+  pin.value(0)
+  sleep(1)
+</code></pre>
+<p><strong>NOTA</strong>: Dependiendo de la placa el número de Pin puede cambiar. Para la Raspberry Pi Pico es el GPIO25 mientas para la Raspberry Pi Pico W es el GPIO0. Consulta la documentación del fabricante.</p>
+<p>Una vez escrito, lo guardaremos. Cuando le demos a guardar, nos preguntará donde lo queremos almacenar; si en nuestro equipo, o en nuestra placa.</p>
+<p><img alt="SelectSave" src="../resources/img/selectsave.png" /></p>
+<p>Una vez almacenado, ya podemos verlo en nuestra placa. Podemos tener varios ficheros y verlos si pulsamos la opción <em>Visualización-&gt;archivos</em>. Podremos ver el listado de ficheros en nuestra placa y gestionarlos.</p>
+<p><img alt="ThonnyFiles" src="../resources/img/thonnyfiles.png" /></p>
+<p>Una vez subido el fichero y ejecutado, ya deberíamos de poder ver parpadear nuestro led.</p>
+<p><strong>NOTA</strong>: En caso de no verlo, comprueba la polaridad del Led la patilla Larga es siempre la negativa.</p>
+<h2 id="ejercicio-con-2-leds">Ejercicio con 2 Leds</h2>
+<p>Os dejamos un Ejercicio con dos leds para que veáis como funcionaría:</p>
+<p><img alt="dosLeds" src="https://lajaqueria.org/recursos/2019-04-27/esquema1.png" /></p>
+<p>Con el código correspondiente.</p>
+<pre><code class="language-python">from machine import Pin
+from time import sleep
+
+ledpin=2
+ledpin2=4
+pin = Pin(ledpin, Pin.OUT)
+pin2 = Pin(ledpin2, Pin.OUT)
+while True:
+  pin.value(1)
+  pin2.value(1)
+  sleep(1)
+  pin.value(0)
+  pin2.value(0)
+  sleep(1)
+</code></pre>
+<h2 id="botones-con-micropython">Botones Con MicroPython</h2>
+<p>Tras ver como utilizar la salida a través de los leds; vamos a tratar de utilizar pulsadores para poder utilizar las entradas del microcontrolador. En este caso también utilizaremos la clase <em>Pin</em> pero en este caso configuraremos cada puerto en modo IN.</p>
+<p>Para este montaje, usaremos los siguientes materiales:</p>
+<ul>
+<li>1 Placa ESP32 o Raspberry Pi PIco</li>
+<li>1 BreadBoard</li>
+<li>1 Led</li>
+<li>1 resistencia 220Ohmios o similar.</li>
+<li>1 resistenia 1KOhmios o similar.</li>
+<li>1 Boton</li>
+<li>cables Dupont</li>
+</ul>
+<p>Veamos el montaje:</p>
+<p><img alt="Boton" src="https://raw.githubusercontent.com/pythoncanarias/upython/master/imagenes/button.png" /></p>
+<p>Y seguidamente mostramos el código:</p>
+<pre><code class="language-python">from machine import Pin
+import time
+
+button=Pin(2,Pin.IN)
+led=Pin(16,Pin.OUT)
+
+while True:
+    state=button.value()
+    led.value(state)
+    time.sleep(0.5)
+</code></pre>
+<p><strong>Ejercicio</strong>: Realizar un montaje que sea necesario pulsar 2 Botones para que se encienda el led.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../install/" class="btn btn-neutral float-left" title="Instalar MicroPython"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../digital_io/" class="btn btn-neutral float-right" title="Entrada/Salida Digital">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../install/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../digital_io/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

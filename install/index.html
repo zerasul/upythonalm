@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Instalar MicroPython - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Instalar MicroPython";
+        var mkdocs_page_input_path = "install.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Instalar MicroPython</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#esp32">ESP32</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instalar-usando-thonny">Instalar usando Thonny</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instalacion-manual">Instalación Manual</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#esp32_1">ESP32</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#raspberry-pi-pico">Raspberry Pi Pico</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Instalar MicroPython</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="instalacion-micropython">Instalación MicroPython</h1>
+<p>Una vez tenemos nuestro entorno instalado y nuestras placas listas, vamos a proceder a instalar en ellas el interprete de MicroPython.</p>
+<p>Dependiendo de la placa, las instrucciones son distintas pero vamos a ver varios métodos de instalación.</p>
+<p>Para este paso, ya necesitaremos conectar nuestras placas a través de un cable USB (microUSB), para poder conectarlo a nuestro equipo.</p>
+<h3 id="esp32">ESP32</h3>
+<p>Para quienes usen ESP32, necesitaran tener un par de cosas en cuenta. </p>
+<p>En primer lugar, si esta utilizando Windows, necesitará instalar los drivers para poder detectar la interfaz USB de nuestra placa. Para ello, necesitará instalar los drivers para el controlador CP210.</p>
+<p>Puedes encontrarlos en el siguiente <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads">enlace</a>.</p>
+<p>Una vez instalados, ya solo queda descargar la última versión del interprete de micropython para el ESP32.</p>
+<p>Puedes encontrarla en el siguiente <a href="https://micropython.org/download/esp32/">enlace</a>.</p>
+<p>Puedes encontrar más información sobre otras placas y versiones de MicroPython en la página oficial:</p>
+<p><a href="https://micropython.org">https://micropython.org</a></p>
+<h2 id="instalar-usando-thonny">Instalar usando Thonny</h2>
+<p>El primer metodo de instalación que veremos, es utilizando la utilidad que nos trae Thonny.</p>
+<p>Para ello, abriremos thonny y seleccionaremos el menú <em>ejecutar-&gt;Elegir interprete...</em> y en la pantalla seleccionaremos primero el tipo de interprete (MicroPython ESP32 o MicroPython Raspberry Pi Pico). Una vez hecho esto, pulsaremos en el enlace abajo derecha "instalar o actualizar software".</p>
+<p><img alt="interprete" src="../resources/img/interpreter.png" /></p>
+<p>En este dialogo, podremos seleccionar en primer lugar, el dispositivo (puerto COM o fichero /dev) y donde se encuentra el interprete a instalar.</p>
+<ul>
+<li>Si esta instalando en un ESP32, seleccione el fichero .bin que descargó anteriormente.</li>
+<li>Si esta instalando en una Raspberry Pi Pico, espere unos segundos a que la placa sea detectada.</li>
+</ul>
+<p><strong>NOTA</strong>: Si no detecta la Raspberry pi Pico, pulse el botón <em>bootsel</em> de la placa mientras inserta el USB.</p>
+<p><img alt="Instalacion ESP32" src="../resources/img/installmp.png" /></p>
+<p><img alt="instalacion Raspberry Pi Pico" src="../resources/img/installmprpico.png" /></p>
+<h2 id="instalacion-manual">Instalación Manual</h2>
+<p>En caso de ser necesario, se puede instalar manualmente el interprete de MicroPython.</p>
+<p>Para instalarlo, necesitaremos la herramienta <em>esptool</em> (Solo para ESP32). Que podemos instalar con pip.</p>
+<pre><code class="language-bash">pip install esptool
+</code></pre>
+<p>Una vez instalada, podemos pasar a instalar el interprete.</p>
+<h3 id="esp32_1">ESP32</h3>
+<p>Para la placa ESP32, usaremos la herramienta anteriormente mencionada.</p>
+<p>Primero, borraremos la flash:</p>
+<pre><code class="language-bash"># Cambia /dev/ttyUSB0 por el nombre del puerto (COMX en windows)
+esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
+
+</code></pre>
+<p>Una vez borrada la flash, podremos instalar el interprete:</p>
+<pre><code class="language-bash"># No olvides cambiar tanto puerto como nombre del fichero
+esptool.py --chip esp32 --port /dev/ttyUSB0 --baud 460800 write_flash -z 0x1000 esp32-20190125-v1.10.bin
+</code></pre>
+<p>Una vez hecho esto, ya puedes utilizar el interprete.</p>
+<h3 id="raspberry-pi-pico">Raspberry Pi Pico</h3>
+<p>Con Raspberry Pi Pico, la instalación es mucho más sencilla ya que no requiere de utilizar la herramienta <em>esptool</em>. Solo conecta la placa pulsando el botón <em>bootsel</em> y se montará un volumen en tu equipo (como si de una unidad USB se tratara).</p>
+<p>Después descarga el interprete microPython para Raspberry Pi Pico:</p>
+<p><a href="https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2">Raspberry Pi Pico</a></p>
+<p><a href="https://micropython.org/download/rp2-pico-w/rp2-pico-w-latest.uf2">Raspberry Pi Pico W</a></p>
+<p>Una vez decargado, pega el fichero en la unidad montada. Una vez terminado expulsa la unidad y ya estará instalado.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../simulator/" class="btn btn-neutral float-left" title="Simulador MicroPython"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../getting_started/" class="btn btn-neutral float-right" title="Primeros Pasos">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../simulator/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../getting_started/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

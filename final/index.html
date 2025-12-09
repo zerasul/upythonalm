@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Proyecto Final - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Proyecto Final";
+        var mkdocs_page_input_path = "final.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Proyecto Final</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Proyecto Final</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="proyecto-final">Proyecto Final</h1>
+<p>Este documento describe el proyecto final que se llevará a cabo al concluir el curso. El objetivo del proyecto es aplicar los conocimientos adquiridos durante las lecciones para resolver un problema real o desarrollar una aplicación funcional.</p>
+<p>Vamos a basarnos en la lectura del sensor de sonido KY-037 y publicar los datos obtenidos en un broker MQTT o utilizando una API REST Http utilizando MicroPython.</p>
+<p><img alt="Montaje KY-037" src="../resources/img/montajefinal.png" /></p>
+<p>Además, también conectaremos la patilla para medir el umbral digital y que se envíe un evento cuando se supere dicho umbral.</p>
+<p>Estos datos serán almacenados en una base de datos en la nube para su posterior análisis y visualización.</p>
+<p>Recuerda que se van a realizar varios dispositivos que tendrán identificados el aula donde estarán instalados.</p>
+<p>El proyecto incluirá las siguientes etapas:</p>
+<p>1.- <strong>Análisis de Requisitos</strong>: Definir los objetivos del proyecto, las funcionalidades necesarias y los requisitos técnicos.</p>
+<p>2.- <strong>Diseño del Sistema</strong>: Planificar la arquitectura del sistema, seleccionar los componentes de hardware y diseñar la estructura del software; e incluso simularlo usando el simulador Wokwi.</p>
+<p>3.- <strong>Implementación</strong>: Desarrollar el código en MicroPython para la lectura del sensor KY-037, la conexión al broker MQTT o API REST, y el envío de datos.</p>
+<p>4.- <strong>Implementar Broker y almacenamiento en la nube</strong>: Configurar un broker MQTT (como Mosquitto o HiveMQ) o una API REST para recibir los datos, y establecer una base de datos en la nube (como Firebase, AWS DynamoDB, etc.) para almacenar la 
+información.</p>
+<p>5.- <strong>Pruebas y Validación</strong>: Realizar pruebas exhaustivas para asegurar que el sistema funciona correctamente, incluyendo la lectura del sensor, la transmisión de datos y el almacenamiento en la nube.</p>
+<p>6.- <strong>Documentación</strong>: Crear documentación detallada del proyecto, incluyendo el diseño del sistema, el código fuente, las instrucciones de configuración y uso, y cualquier otro aspecto relevante.</p>
+<p>7.- <strong>Creación de un Dashboard de Visualización</strong>: Desarrollar un dashboard utilizando herramientas como Grafana, Power BI o una aplicación web personalizada para visualizar los datos almacenados en la base de datos en la nube.</p>
+<p>8.- <strong>Presentación del Proyecto</strong>: Preparar una presentación para mostrar el proyecto, destacando los objetivos, el proceso de desarrollo, los desafíos enfrentados y los resultados obtenidos.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mqtt/" class="btn btn-neutral float-left" title="MQTT"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../references/" class="btn btn-neutral float-right" title="Recursos">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mqtt/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../references/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

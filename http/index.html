@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Comunicación Http - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Comunicaci\u00f3n Http";
+        var mkdocs_page_input_path = "http.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Comunicación Http</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cliente-http">Cliente HTTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#servidor-http">Servidor HTTP</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Comunicación Http</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="comunicacion-http">Comunicación HTTP</h1>
+<p>Uno de los usos más comunes de la conectividad en dispositivos IoT es la comunicación a través del protocolo HTTP (HyperText Transfer Protocol). Este protocolo permite a los dispositivos enviar y recibir datos a través de la web, interactuando con servidores y servicios en línea.</p>
+<p>En esta sección, veremos por un lado, la posibilidad de realizar peticiones HTTP como cliente, y por otro lado, cómo configurar nuestro dispositivo para actuar como un servidor HTTP.</p>
+<p><strong>NOTA</strong>: Para todos estos ejemplos, es necesario tener una conexión a una red Wi-Fi activa. Asegúrate de haber configurado correctamente la conexión Wi-Fi antes de ejecutar los ejemplos de esta sección.</p>
+<h2 id="cliente-http">Cliente HTTP</h2>
+<p>Para realizar peticiones HTTP desde nuestro dispositivo, utilizamos la librería <code>urequests</code>, que proporciona una interfaz sencilla para enviar solicitudes HTTP. A continuación, se muestra un ejemplo de cómo realizar una solicitud GET a un servidor web:</p>
+<p>Sin embargo, esta biblioteca no está incluida por defecto en todas las implementaciones de MicroPython, por lo que es posible que necesites descargarla e instalarla manualmente en tu dispositivo.</p>
+<p>MicroPython tiene incluido un pequeño gestor de paquetes llamado <code>upip</code>, que permite instalar paquetes adicionales. Para instalar <code>urequests</code>, puedes utilizar el siguiente comando en la consola REPL de MicroPython:</p>
+<pre><code class="language-python">import upip
+upip.install('micropython-urequests')
+</code></pre>
+<p>Por lo que una vez hecho esto, ya podemos utilizar la librería <code>urequests</code> para realizar peticiones HTTP. Esta biblioteca es análoga a la popular biblioteca <code>requests</code> de Python, pero adaptada para funcionar en entornos con recursos limitados como MicroPython.</p>
+<p>Vamos a ver un ejemplo de uso para la API de información meteorológica de OpenWeatherMap; la cual puedes encontrar información en:</p>
+<p>https://openweathermap.org/api</p>
+<p>Veammos cómo realizar una solicitud GET para obtener el clima actual de una ciudad específica:</p>
+<pre><code class="language-python">import urequests
+city='Almería'
+api_key='TU_API_KEY'
+response = urequests.get(f'http://api.openweathermap.org/data/2.5/weather?q={city}&amp;appid={api_key}')
+if response.status_code == 200:
+    data = response.json()
+    print(&quot;Clima en&quot;, city)
+    print(&quot;Temperatura:&quot;, data['main']['temp'])
+    print(&quot;Descripción:&quot;, data['weather'][0]['description'])
+else:
+    print(&quot;Error al obtener los datos:&quot;, response.status_code)
+response.close()
+</code></pre>
+<p>En este ejemplo, reemplaza <code>'TU_API_KEY'</code> con tu clave de API de OpenWeatherMap. El código realiza una solicitud GET para obtener el clima actual de la ciudad especificada y luego imprime la temperatura y la descripción del clima en la consola.</p>
+<h2 id="servidor-http">Servidor HTTP</h2>
+<p>Además de actuar como cliente HTTP, nuestro dispositivo también puede funcionar como un servidor HTTP, permitiendo que otros dispositivos se conecten a él y soliciten información o controlen sus funciones. Para ello, utilizamos la librería <code>socket</code> para crear un servidor básico. Vamos a tratar de encender un led a través deun servidor HTTP simple.</p>
+<p>Para ello necesitaremos los siguientes componentes:</p>
+<ul>
+<li>1 LED</li>
+<li>1 Resistencia de 220 ohmios</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+</ul>
+<p>Realizando el montaje de la siguiente manera:</p>
+<p><img alt="Montaje LED" src="../resources/img/montajeserverhttp.png" /></p>
+<p>A continuación, se muestra un ejemplo de cómo configurar un servidor HTTP simple:</p>
+<pre><code class="language-python">import socket
+from machine import Pin
+led = Pin(14, Pin.OUT)  # Cambia el número del pin según tu conexión
+addr = socket.getaddrinfo('0.0.0.0', 80)[0][-1]
+s = socket.socket()
+s.bind(addr)
+s.listen(1)
+print('Servidor HTTP escuchando en http://0.0.0.0:80')
+while True:
+    cl, addr = s.accept()
+    print('Cliente conectado desde', addr)
+    request = cl.recv(1024)
+    request_str = request.decode('utf-8')
+    print('Solicitud HTTP:')
+    print(request_str)
+
+    # Control simple del LED a través de la URL
+    if '/led/on' in request_str:
+        led.value(1)
+    elif '/led/off' in request_str:
+        led.value(0)
+
+    response = &quot;&quot;&quot;HTTP/1.1 200 OK
+Content-Type: text/html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Servidor HTTP en MicroPython&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Servidor HTTP en MicroPython&lt;/h1&gt;
+&lt;p&gt;LED está {}&lt;/p&gt;
+&lt;a href=&quot;/led/on&quot;&gt;Encender LED&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;/led/off&quot;&gt;Apagar LED&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&quot;&quot;&quot;.format('ENCENDIDO' if led.value() else 'APAGADO') 
+    cl.send(response)
+    cl.close()
+</code></pre>
+<p>En este ejemplo, el servidor HTTP escucha en el puerto 80 y responde a las solicitudes entrantes. Además, permite controlar un LED conectado al pin especificado mediante las rutas <code>/led/on</code> y <code>/led/off</code>. Cuando un cliente accede a estas rutas, el LED se enciende o apaga respectivamente, y la página web muestra el estado actual del LED.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../networks/" class="btn btn-neutral float-left" title="Redes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mqtt/" class="btn btn-neutral float-right" title="MQTT">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../networks/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mqtt/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>MQTT - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "MQTT";
+        var mkdocs_page_input_path = "mqtt.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">MQTT</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#conceptos-basicos-de-mqtt">Conceptos Básicos de MQTT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uso-de-mqtt-en-micropython">Uso de MQTT en MicroPython</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejemplo-de-codigo-mqtt">Ejemplo de Código MQTT</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#observar-mensajes">Observar mensajes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#suscribirse-a-un-tema">Suscribirse a un Tema</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">MQTT</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mqtt">MQTT</h1>
+<p>MQTT (Message Queuing Telemetry Transport) es un protocolo de mensajería ligero diseñado para dispositivos con recursos limitados y redes de baja ancho de banda. Es ampliamente utilizado en aplicaciones de Internet de las Cosas (IoT) debido a su eficiencia y simplicidad.</p>
+<h2 id="conceptos-basicos-de-mqtt">Conceptos Básicos de MQTT</h2>
+<ul>
+<li><strong>Broker</strong>: Es el servidor que recibe todos los mensajes, los filtra y los envía a los clientes suscritos. Ejemplos populares de brokers MQTT incluyen Mosquitto y HiveMQ.</li>
+<li><strong>Cliente</strong>: Es cualquier dispositivo o aplicación que se conecta al broker para enviar o recibir mensajes.</li>
+<li><strong>Tema (Topic)</strong>: Es una cadena jerárquica que se utiliza para organizar y filtrar mensajes. Los clientes pueden publicar mensajes en un tema o suscribirse a un tema para recibir mensajes.</li>
+<li><strong>Publicar (Publish)</strong>: Es el acto de enviar un mensaje a un tema específico.</li>
+<li><strong>Suscribirse (Subscribe)</strong>: Es el acto de registrarse para recibir mensajes de un tema específico.</li>
+</ul>
+<h2 id="uso-de-mqtt-en-micropython">Uso de MQTT en MicroPython</h2>
+<p>Para utilizar MQTT en MicroPython, se puede utilizar la biblioteca <code>umqtt.simple</code>, que proporciona una implementación básica del cliente MQTT. A continuación, se muestra un ejemplo de cómo conectar un dispositivo MicroPython a un broker MQTT, publicar mensajes y suscribirse a un tema.</p>
+<p>Para instalar la biblioteca <code>umqtt.simple</code>, asegurate de tener conectividad a Internet y sigue las instrucciones de instalación específicas para tu entorno MicroPython.</p>
+<pre><code class="language-python">import upip
+upip.install('micropython-umqtt.simple')
+</code></pre>
+<h3 id="ejemplo-de-codigo-mqtt">Ejemplo de Código MQTT</h3>
+<pre><code class="language-python">import network
+from umqtt.simple import MQTTClient
+import time
+
+# configuracion broker MQTT
+MQTT_BROKER = &quot;test.mosquitto.org&quot;
+MQTT_CLIENT_ID = &quot;micropython_client&quot;
+MQTT_TOPIC = b&quot;test/topic&quot;
+# conectar MQTT
+def connect_mqtt():
+    client = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER)
+    client.connect()
+    return client
+# publicar mensaje
+def publish_message(client, message):
+    client.publish(MQTT_TOPIC, message)
+# main
+def main():
+    client = connect_mqtt()
+    while True:
+        publish_message(client, b&quot;Hello from MicroPython!&quot;)
+        time.sleep(5)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre>
+<p>Para poder ver los mensajes publicados, puedes utilizar un cliente MQTT como MQTT.fx o cualquier otra herramienta que te permita suscribirte al tema <code>test/topic</code> en el broker <code>test.mosquitto.org</code>.</p>
+<p>Este código conecta un dispositivo MicroPython a un broker MQTT público, publica un mensaje cada 5 segundos en el tema especificado y puede ser modificado para adaptarse a tus necesidades específicas.</p>
+<h4 id="observar-mensajes">Observar mensajes</h4>
+<p>Podemos suscribirnos a los mensajes enviados utilizando la web gratutia: </p>
+<p>https://testclient-cloud.mqtt.cool/</p>
+<p>En esta página, podemos conectarnos al broker <code>test.mosquitto.org</code> y suscribirnos al tema <code>test/topic</code> para ver los mensajes que nuestro dispositivo MicroPython está publicando.</p>
+<h3 id="suscribirse-a-un-tema">Suscribirse a un Tema</h3>
+<p>Para suscribirse a un tema y recibir mensajes, podemos modificar el ejemplo anterior para incluir una función de callback que maneje los mensajes entrantes.</p>
+<pre><code class="language-python">def message_callback(topic, msg):
+    print(&quot;Mensaje recibido en el tema {}: {}&quot;.format(topic, msg))
+client.set_callback(message_callback)
+client.subscribe(MQTT_TOPIC)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../http/" class="btn btn-neutral float-left" title="Comunicación Http"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../final/" class="btn btn-neutral float-right" title="Proyecto Final">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../http/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../final/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
