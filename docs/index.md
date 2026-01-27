@@ -14,7 +14,7 @@ En esta pagina encontraras los contenidos para poder instalar y utilizar MicroPy
 8. [Interrupciones](interrupts.md)
 9. [Sensores/Actuadores](sensors.md)
 10. [Redes](networks.md)
-11. [Comunicación Http)](http.md)
+11. [Comunicación HTTP](http.md)
 12. [MQTT](mqtt.md)
 13. [Ejercicios Finales](final.md)
 14. [Recursos](references.md)
