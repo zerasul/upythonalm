@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Sensores/Actuadores - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Sensores/Actuadores";
+        var mkdocs_page_input_path = "sensors.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Sensores/Actuadores</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sensores">Sensores</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-de-temperatura-y-humedad-dht11">Sensor de temperatura y Humedad DHT11</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-de-ultrasonidos-hc-sr04">Sensor de ultrasonidos HC-SR04</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-de-sonido-ky-037">Sensor de sonido KY-037</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#actuadores">Actuadores</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ejemplo-control-de-un-zumbador">Ejemplo: Control de un Zumbador</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Sensores/Actuadores</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="sensores-y-actuadores">Sensores Y Actuadores</h1>
+<p>En esta sección se describen los diferentes sensores y actuadores que pueden ser utilizados en el sistema. Cada uno de ellos tiene características específicas que permiten su integración y funcionamiento adecuado dentro del entorno.</p>
+<h2 id="sensores">Sensores</h2>
+<p>Los sensores son dispositivos que detectan cambios en el entorno físico y convierten esa información en señales eléctricas que pueden ser interpretadas por el sistema. Algunos ejemplos comunes de sensores incluyen:</p>
+<ul>
+<li>Sensores de temperatura</li>
+<li>Sensores de humedad</li>
+<li>Sensores de luz</li>
+<li>Sensores de proximidad</li>
+<li>Sensores de presión</li>
+</ul>
+<p>En este documento, vamos a ver algunos ejemplos de cómo utilizar estos sensores con entradas analógicas y digitales.</p>
+<h3 id="sensor-de-temperatura-y-humedad-dht11">Sensor de temperatura y Humedad DHT11</h3>
+<p>El DHT11 es un sensor digital que mide la temperatura y la humedad ambiental. Para utilizarlo, se necesita una librería específica que facilite la comunicación con el sensor.</p>
+<p><img alt="DHT11 Sensor" src="../resources/img/dht11.png" /></p>
+<p><strong>NOTA</strong>: Puede encontrarse una versión con 3 pines. El funcionamiento es el mismo.  Solo cambia la forma de conectarlo.</p>
+<p>Veamos como utilizar este sensor en nuestro dispositivo.</p>
+<p>Para ello, utilizamos la clase <code>DHT11</code> de la librería <code>dht</code>. </p>
+<p>Veamos un ejemplo de conexión del sensor DHT11; para ello necesitamos:</p>
+<ul>
+<li>1 Sensor DHT11</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+</ul>
+<p>El montaje se realizará de la siguiente manera:</p>
+<p><img alt="Montaje DHT11" src="../resources/img/montajeDht11.png" /></p>
+<p>A continuación, se muestra un ejemplo de código para leer los valores de temperatura y humedad del sensor DHT11:</p>
+<pre><code class="language-python">import dht
+from machine import Pin
+import time
+
+# Configurar el pin donde está conectado el DHT11
+dht_pin = Pin(4)  # Cambia el número del pin según tu conexión
+sensor = dht.DHT11(dht_pin)
+while True:
+    try:
+        sensor.measure()  # Realizar la medición
+        temperature = sensor.temperature()  # Obtener la temperatura
+        humidity = sensor.humidity()  # Obtener la humedad
+        print(&quot;Temperatura: {}°C  Humedad: {}%&quot;.format(temperature, humidity))
+    except OSError as e:
+        print(&quot;Error al leer el sensor:&quot;, e)
+    time.sleep(2)  # Esperar 2 segundos antes de la siguiente lectura
+</code></pre>
+<p>Este código configura el pin donde está conectado el sensor DHT11, realiza mediciones periódicas y muestra los valores de temperatura y humedad en la consola. Asegúrate de conectar correctamente el sensor al pin especificado en el código.</p>
+<h3 id="sensor-de-ultrasonidos-hc-sr04">Sensor de ultrasonidos HC-SR04</h3>
+<p>El HC-SR04 es un sensor de ultrasonidos que se utiliza para medir distancias. Funciona enviando un pulso ultrasónico y midiendo el tiempo que tarda en regresar después de rebotar en un objeto.</p>
+<p><img alt="HC-SR04 Sensor" src="../resources/img/hcsr04.png" /></p>
+<p>Para utilizar el HC-SR04, necesitamos dos pines: uno para el disparo (trigger) y otro para la recepción (echo). Vamos a realizar un montaje simple para medir distancias utilizando este sensor.</p>
+<p>Para este ejemplo, necesitaremos los siguientes componentes:</p>
+<ul>
+<li>1 Sensor HC-SR04</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+</ul>
+<p>El montaje se realizará de la siguiente manera:</p>
+<p><img alt="Montaje HC-SR04" src="../resources/img/montajeultrasonidos.png" /></p>
+<p>A continuación, se muestra un ejemplo de código para medir la distancia utilizando el sensor HC-SR04:</p>
+<pre><code class="language-python">from machine import Pin, time_pulse_us
+import time
+trigger_pin = Pin(12, Pin.OUT)  # Pin de disparo
+echo_pin = Pin(14, Pin.IN)     # Pin de recepción
+def medir_distancia():
+    # Enviar un pulso de 10 microsegundos al pin de disparo
+    trigger_pin.value(0)
+    time.sleep_us(2)
+    trigger_pin.value(1)
+    time.sleep_us(10)
+    trigger_pin.value(0)
+
+    # Medir el tiempo del pulso en el pin de recepción
+    duracion = time_pulse_us(echo_pin, 1, 30000)  # Esperar hasta 30ms
+    if duracion &lt; 0:
+        return -1  # Indica que no se recibió eco   
+    # Calcular la distancia en centímetros
+    distancia = (duracion / 2) / 29.1
+    return distancia
+while True:
+    distancia = medir_distancia()
+    if distancia != -1:
+        print(&quot;Distancia: {:.2f} cm&quot;.format(distancia))
+    else:
+        print(&quot;No se detectó ningún objeto&quot;)
+    time.sleep(1)
+</code></pre>
+<p>En este código, configuramos los pines de disparo y recepción, enviamos un pulso ultrasónico y medimos el tiempo que tarda en regresar. Luego, calculamos la distancia en centímetros y la mostramos en la consola.</p>
+<h3 id="sensor-de-sonido-ky-037">Sensor de sonido KY-037</h3>
+<p>El KY-037 es un sensor de sonido que puede detectar niveles de sonido en el entorno. Este sensor tiene una salida analógica que varía según la intensidad del sonido captado.</p>
+<p><img alt="KY-037 Sensor" src="../resources/img/ky037.png" /></p>
+<p>Para utilizar el KY-037, conectamos su salida analógica a un pin ADC del microcontrolador.</p>
+<p>Vamos a realizar un ejemplo, para ello necesitaremos los siguientes componentes:</p>
+<ul>
+<li>1 Sensor KY-037</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+</ul>
+<p>El montaje se realizará de la siguiente manera:</p>
+<p><img alt="Montaje KY-037" src="../resources/img/montajeky037.png" /></p>
+<p>A continuación, se muestra un ejemplo de código para leer los valores del sensor KY-037:</p>
+<pre><code class="language-python">from machine import ADC
+import time
+
+pin_number = 33  # Cambia esto al número de pin que estás utilizando
+# Configurar el pin ADC
+adc = ADC(pin_number)
+while True:
+    # Leer el valor analógico
+    value = adc.read()
+    print(&quot;Nivel de sonido:&quot;, value)
+    time.sleep(1)
+</code></pre>
+<p>En este código, configuramos el pin ADC donde está conectado el sensor KY-037 y leemos periódicamente los valores analógicos que representan el nivel de sonido. Estos valores se imprimen en la consola cada segundo.</p>
+<p>Como habrás podido observar, hay un pin extra que es digital. Este pin se usa como un umbral para activar una salida digital cuando el nivel de sonido supera cierto valor. Si deseas utilizar esta funcionalidad, puedes conectar este pin a un pin digital del microcontrolador y leer su estado de manera similar a como se hace con un botón en la sección de entradas digitales.</p>
+<h2 id="actuadores">Actuadores</h2>
+<p>Los actuadores son dispositivos que reciben señales eléctricas del sistema y realizan una acción física en el entorno. Algunos ejemplos comunes de actuadores incluyen:</p>
+<ul>
+<li>Motores</li>
+<li>Servomotores</li>
+<li>Relés</li>
+<li>Zumbadores</li>
+</ul>
+<h3 id="ejemplo-control-de-un-zumbador">Ejemplo: Control de un Zumbador</h3>
+<p>Para este ejemplo, necesitaremos los siguientes componentes:</p>
+<ul>
+<li>1 Zumbador (buzzer)</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+</ul>
+<p>El montaje se realizará de la siguiente manera:</p>
+<p><img alt="Montaje Zumbador" src="../resources/img/montajebuzzer.png" /></p>
+<p>A continuación, se muestra un ejemplo de código para hacer sonar el zumbador:</p>
+<pre><code class="language-python">from machine import Pin
+import time
+pin_number = 15  # Cambia esto al número de pin que estás utilizando
+buzzer = Pin(pin_number, Pin.OUT)
+while True:
+    buzzer.value(1)  # Activar el zumbador
+    time.sleep(0.5)  # Sonar durante 0.5 segundos
+    buzzer.value(0)  # Desactivar el zumbador
+    time.sleep(0.5)  # Esperar 0.5 segundos
+</code></pre>
+<p>En este código, configuramos el pin donde está conectado el zumbador y lo activamos y desactivamos periódicamente para crear un sonido intermitente.</p>
+<p>Se puede usar una salida PWM para controlar el tono del zumbador.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../interrupts/" class="btn btn-neutral float-left" title="Interrupciones"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../networks/" class="btn btn-neutral float-right" title="Redes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../interrupts/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../networks/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Redes - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Redes";
+        var mkdocs_page_input_path = "networks.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../digital_io/">Entrada/Salida Digital</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Redes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#conexion-a-una-red-wi-fi">Conexión a una red Wi-Fi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creacion-de-redes-ad-hoc">Creación de Redes Ad-Hoc</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uso-de-contrasenas-yo-seguridad">Uso de Contraseñas y/o Seguridad</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Redes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="redes-networking">Redes (Networking)</h1>
+<p>A continuación, vamos a ver una de las funcionalidades más interesantes de los microcontroladores modernos: la capacidad de conectarse a redes, ya sea a través de Wi-Fi, Ethernet o Bluetooth. Esto permite que nuestros dispositivos puedan comunicarse entre sí y con otros dispositivos en la red, así como acceder a servicios en la nube.</p>
+<p>Es importante mencionar que el ESP32 si tiene soporte nativo para Wi-Fi y Bluetooth, mientras que la Raspberry Pi Pico sólo los modelos "W" soportan Wi-fi, pero no Bluetooth. Para utilizar estas funcionalidades, es necesario contar con las librerías adecuadas que faciliten la conexión y comunicación en red.</p>
+<h2 id="conexion-a-una-red-wi-fi">Conexión a una red Wi-Fi</h2>
+<p>Para conectar nuestro dispositivo a una red Wi-Fi, utilizamos la librería <code>network</code>. A continuación, se muestra un ejemplo de cómo conectarse a una red Wi-Fi utilizando el ESP32 o Raspberry Pi Pico W:</p>
+<pre><code class="language-python">import network
+import time 
+ssid = 'TU_SSID'
+password = 'TU_CONTRASEÑA'
+# Crear una instancia de la interfaz Wi-Fi
+wifi = network.WLAN(network.STA_IF)
+# Activar la interfaz Wi-Fi
+wifi.active(True)
+# Conectarse a la red Wi-Fi
+wifi.connect(ssid, password)
+while not wifi.isconnected():
+    time.sleep(1)
+print(&quot;Conectado a la red Wi-Fi:&quot;, wifi.ifconfig())
+</code></pre>
+<p>En este ejemplo, reemplaza <code>'TU_SSID'</code> y <code>'TU_CONTRASEÑA'</code> con el nombre y la contraseña de tu red Wi-Fi. El código activa la interfaz Wi-Fi, intenta conectarse a la red especificada y espera hasta que la conexión se establezca correctamente. Una vez conectado, imprime la configuración de red obtenida (dirección IP, máscara de subred, puerta de enlace y servidores DNS).</p>
+<h2 id="creacion-de-redes-ad-hoc">Creación de Redes Ad-Hoc</h2>
+<p>Además de conectarse a redes Wi-Fi existentes, algunos dispositivos permiten crear redes ad-hoc o puntos de acceso (AP) para que otros dispositivos puedan conectarse directamente a ellos. A continuación, se muestra un ejemplo de cómo configurar un punto de acceso Wi-Fi utilizando el ESP32 o Raspberry Pi Pico W:</p>
+<pre><code class="language-python">import network
+# Crear una instancia de la interfaz Wi-Fi en modo AP
+ap = network.WLAN(network.AP_IF)
+# Activar la interfaz AP
+ap.active(True)
+# Configurar el SSID y la contraseña del punto de acceso
+ap.config(essid='Mi_Punto_de_Acceso', password='mi_contraseña')
+print(&quot;Punto de acceso creado. SSID: Mi_Punto_de_Acceso&quot;)
+</code></pre>
+<p>En este ejemplo, se crea un punto de acceso con el SSID <code>'Mi_Punto_de_Acceso'</code> y la contraseña <code>'mi_contraseña'</code>. Otros dispositivos podrán conectarse a este punto de acceso utilizando las credenciales proporcionadas.</p>
+<h2 id="uso-de-contrasenas-yo-seguridad">Uso de Contraseñas y/o Seguridad</h2>
+<p>Es recomendable utilizar ficheros externos con la configuración de nuestro SSID y contraseñas para evitar exponer esta información sensible en el código fuente. De esta manera, podemos mantener nuestras credenciales seguras y facilitar la gestión de múltiples configuraciones de red.</p>
+<p>Veamos un ejemplo:</p>
+<pre><code class="language-python"># archivo config.py
+SSID = 'TU_SSID'
+PASSWORD = 'TU_CONTRASEÑA'
+</code></pre>
+<pre><code class="language-python"># archivo main.py
+import network
+from config import SSID, PASSWORD
+import time
+# Crear una instancia de la interfaz Wi-Fi
+wifi = network.WLAN(network.STA_IF)
+# Activar la interfaz Wi-Fi
+wifi.active(True)
+# Conectarse a la red Wi-Fi
+wifi.connect(SSID, PASSWORD)
+while not wifi.isconnected():
+    time.sleep(1)
+print(&quot;Conectado a la red Wi-Fi:&quot;, wifi.ifconfig())
+</code></pre>
+<p>En este ejemplo, las credenciales de la red Wi-Fi se almacenan en un archivo separado llamado <code>config.py</code>, lo que ayuda a mantener el código más limpio y seguro.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../sensors/" class="btn btn-neutral float-left" title="Sensores/Actuadores"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../http/" class="btn btn-neutral float-right" title="Comunicación Http">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../sensors/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../http/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Entrada/Salida Digital - Curso de MicroPython</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Entrada/Salida Digital";
+        var mkdocs_page_input_path = "digital_io.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Curso de MicroPython
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install_env/">instalar Entorno</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../devices/">Dispositivos</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulator/">Simulador MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../install/">Instalar MicroPython</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Primeros Pasos</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Entrada/Salida Digital</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#configuracion-de-es-digitales">Configuración de E/S Digitales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lectura-de-entradas-digitales">Lectura de Entradas Digitales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#escritura-de-salidas-digitales">Escritura de Salidas Digitales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejemplo-control-de-un-led">Ejemplo: Control de un LED</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ejemplo-lectura-de-un-boton">Ejemplo: Lectura de un Botón</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../analog_io/">Entrada/Salida Analogica</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupciones</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../sensors/">Sensores/Actuadores</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../networks/">Redes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../http/">Comunicación Http</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../mqtt/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../final/">Proyecto Final</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../references/">Recursos</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Curso de MicroPython</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Entrada/Salida Digital</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="entradasalida-digital">Entrada/Salida Digital</h1>
+<p>Vamos a ver una visión general de las capacidades de entrada y salida digital de nuestro dispositivo.</p>
+<p>Las Entradas o Salidas Digitales (E/S digitales) permiten al dispositivo interactuar con otros componentes electrónicos, como sensores, actuadores y otros dispositivos digitales. Estas E/S digitales pueden configurarse como entradas para leer señales digitales o como salidas para enviar señales digitales.</p>
+<h2 id="configuracion-de-es-digitales">Configuración de E/S Digitales</h2>
+<p>Para configurar un pin como entrada o salida digital, utilizamos la clase <code>Pin</code> del módulo <code>machine</code>. Aquí hay un ejemplo de cómo configurar un pin:</p>
+<pre><code class="language-python">from machine import Pin
+
+# Configurar un pin como salida digital
+pin = Pin(pin_number, Pin.OUT)
+# Configurar un pin como entrada digital
+pin = Pin(pin_number, Pin.IN)
+</code></pre>
+<p>Donde <code>pin_number</code> es el número del pin que deseas configurar, y <code>Pin.OUT</code> y <code>Pin.IN</code> son constantes que indican si el pin se configura como salida o entrada, respectivamente.</p>
+<h2 id="lectura-de-entradas-digitales">Lectura de Entradas Digitales</h2>
+<p>Para leer el estado de un pin configurado como entrada digital, utilizaremos el método <code>value()</code> de la clase <code>Pin</code>:</p>
+<pre><code class="language-python">from machine import Pin
+
+
+pin = Pin(pin_number, Pin.IN)
+state = pin.value()
+</code></pre>
+<p>El valor devuelto por <code>value()</code> será <code>1</code> (alto) si el pin está en un estado alto (5V o 3.3V, dependiendo del dispositivo) o <code>0</code> (bajo) si está en un estado bajo (0V).</p>
+<h2 id="escritura-de-salidas-digitales">Escritura de Salidas Digitales</h2>
+<p>Para establecer el estado de un pin configurado como salida digital, utilizamos el método <code>value()</code> de la clase <code>Pin</code>:</p>
+<pre><code class="language-python">from machine import Pin
+
+pin = Pin(pin_number, Pin.OUT)
+pin.value(1)  # Establecer el pin en alto
+pin.value(0)  # Establecer el pin en bajo
+</code></pre>
+<p>A continuación, vamos a realizar el montaje de un circuito simple para controlar un LED utilizando una salida digital.</p>
+<h2 id="ejemplo-control-de-un-led">Ejemplo: Control de un LED</h2>
+<p>Para este ejemplo, necesitarás los siguientes componentes:</p>
+<ul>
+<li>1 LED</li>
+<li>1 Resistencia de 220 ohmios</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+</ul>
+<p>El montaje se realizará de la siguiente manera:</p>
+<p><img alt="Montaje Blink" src="../resources/img/blink1.png" /></p>
+<p>Una vez montado, vamos a escribir un programa para hacer parpadear el LED.</p>
+<pre><code class="language-python">from machine import Pin
+import time
+
+pin_number = 17  # Cambia esto al número de pin que estás utilizando
+led = Pin(pin_number, Pin.OUT)
+
+while True:
+    led.value(1)  # Encender el LED
+    time.sleep(1)  # Esperar 1 segundo
+    led.value(0)  # Apagar el LED
+    time.sleep(1)  # Esperar 1 segundo
+</code></pre>
+<p>Este programa encenderá y apagará el LED cada segundo, demostrando el uso de una salida digital para controlar un dispositivo externo.</p>
+<p>Como vemos en el código, utilizamos la función <code>time.sleep()</code> para crear un retraso entre los cambios de estado del LED.</p>
+<p>Ahora, nos centraremos en la lectura de una entrada digital utilizando un botón. Para ello, vamos a utilizar el botón como nuevo componente.</p>
+<p>Un botón es un interruptor que, cuando se presiona, conecta el pin a tierra (0V). Para evitar que el pin quede "flotando" cuando el botón no está presionado, utilizaremos una resistencia pull-up interna.</p>
+<h2 id="ejemplo-lectura-de-un-boton">Ejemplo: Lectura de un Botón</h2>
+<p>Para este ejemplo, necesitarás los siguientes componentes:</p>
+<ul>
+<li>1 Botón</li>
+<li>Cables de conexión</li>
+<li>Protoboard</li>
+<li>1 Resistencia de 10k ohmios (si no usas la resistencia pull-up interna)</li>
+<li>1 Resistencia de 220 ohmios (para el LED)</li>
+<li>1 LED</li>
+</ul>
+<p>El montaje se realizará de la siguiente manera:</p>
+<p><img alt="Montaje Botón" src="../resources/img/boton1.png" /></p>
+<p>Una vez montado, vamos a escribir un programa para leer el estado del botón y controlar el LED en consecuencia.</p>
+<pre><code class="language-python">from machine import Pin
+import time
+pin_button = 2  # Cambia esto al número de pin que estás utilizando para el botón
+pin_led = 17    # Cambia esto al número de pin que estás utilizando para el LED
+button = Pin(pin_button, Pin.IN)
+led = Pin(pin_led, Pin.OUT)
+while True:
+    if button.value() == 1:  # El botón está presionado
+        led.value(1)  # Encender el LED
+    else:
+        led.value(0)  # Apagar el LED
+    time.sleep(0.1)  # Pequeño retraso para evitar rebotes
+</code></pre>
+<p>En este programa, cuando el botón se presiona, el pin de entrada se conecta a tierra, y el LED se enciende. Cuando el botón no está presionado, el pin de entrada está en alto debido a la resistencia pull-up interna, y el LED se apaga.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../getting_started/" class="btn btn-neutral float-left" title="Primeros Pasos"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../analog_io/" class="btn btn-neutral float-right" title="Entrada/Salida Analogica">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../getting_started/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../analog_io/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
