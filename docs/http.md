@@ -12,11 +12,11 @@ Para realizar peticiones HTTP desde nuestro dispositivo, utilizamos la librería
 
 Sin embargo, esta biblioteca no está incluida por defecto en todas las implementaciones de MicroPython, por lo que es posible que necesites descargarla e instalarla manualmente en tu dispositivo.
 
-MicroPython tiene incluido un pequeño gestor de paquetes llamado `upip`, que permite instalar paquetes adicionales. Para instalar `urequests`, puedes utilizar el siguiente comando en la consola REPL de MicroPython:
+MicroPython tiene incluido un pequeño gestor de paquetes llamado `mip`, que permite instalar paquetes adicionales. Para instalar `urequests`, puedes utilizar el siguiente comando en la consola REPL de MicroPython:
 
 ```python
-import upip
-upip.install('micropython-urequests')
+import mip
+mip.install('micropython-urequests')
 ```
 
 Por lo que una vez hecho esto, ya podemos utilizar la librería ```urequests``` para realizar peticiones HTTP. Esta biblioteca es análoga a la popular biblioteca `requests` de Python, pero adaptada para funcionar en entornos con recursos limitados como MicroPython.
